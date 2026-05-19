@@ -1,0 +1,2 @@
+packages/shared/src/types/** linguist-language=TypeScript
+packages/database/src/** linguist-language=TypeScript

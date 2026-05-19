@@ -1,0 +1,19 @@
+{
+  "name": "ourflat",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "mobile",
+    "web"
+  ],
+  "scripts": {
+    "mobile": "npm run start -w mobile",
+    "web": "npm run dev -w web",
+    "build:web": "npm run build -w web",
+    "lint": "npm run lint -w web",
+    "typecheck": "npm run typecheck -w shared -w database -w ui",
+    "db:generate": "npm run generate -w database",
+    "db:migrate": "supabase db push"
+  }
+}
