@@ -1,17 +1,5 @@
-import { createClient } from '@/lib/supabase-server';
-import { redirect } from 'next/navigation';
+import { DemoAuthProvider } from '@/hooks/useDemoAuth';
 
-export default async function DashboardLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const supabase = await createClient();
-  const { data: { session } } = await supabase.auth.getSession();
-
-  if (!session) {
-    redirect('/auth/sign-in');
-  }
-
-  return <>{children}</>;
+export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+  return <DemoAuthProvider>{children}</DemoAuthProvider>;
 }
